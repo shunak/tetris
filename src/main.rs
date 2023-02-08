@@ -27,7 +27,7 @@ fn main() {
 
     for y in 0..22 {
         for x in 0..12 {
-            if field[x][y] == 1{
+            if field[y][x] == 1{
                 print!("[]");
             }else{
                 print!(" .");

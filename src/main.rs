@@ -1,5 +1,12 @@
 fn main() {
 
+    let minos = [
+        [0,0,0,0],
+        [0,0,0,0],
+        [1,1,1,1],
+        [0,0,0,0],
+    ];
+
     let field = [
         [1,1,1,0,0,0,0,0,0,1,1,1],
         [1,0,0,0,0,0,0,0,0,0,0,1],
@@ -25,9 +32,20 @@ fn main() {
         [1,1,1,1,1,1,1,1,1,1,1,1],
     ];
 
+    let mut field_buf = field;
+
+    for y in 0..4 {
+        for x in 0..4 {
+            field_buf[y+8][x+4] |= minos[y][x];
+
+        }
+    }
+
+
+
     for y in 0..22 {
         for x in 0..12 {
-            if field[y][x] == 1{
+            if field_buf[y][x] == 1{
                 print!("[]");
             }else{
                 print!(" .");

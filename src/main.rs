@@ -1,3 +1,6 @@
+use std::{thread, time};
+
+
 struct Position {
     x: usize,
     y: usize,
@@ -99,6 +102,8 @@ fn main() {
     // }
     let mut pos = Position {x:4, y:0};
 
+     println!("\x1b[2J\x1b[H\x1b[?25l");
+
 
     for _ in 0..5 {
 
@@ -115,6 +120,8 @@ fn main() {
         // Update y of pos
         pos.y += 1;
 
+ println!("\x1b[H");
+
         // Field for draw
         for y in 0..22 {
             for x in 0..12 {
@@ -128,10 +135,15 @@ fn main() {
         }
     println!();
 
+
+    // Sleep for 1 sec
+    thread::sleep(time::Duration::from_millis(1000));
+
     }
 
 
 
+     println!("\x1b[?25h");
 
 
 

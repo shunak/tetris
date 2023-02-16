@@ -1,5 +1,8 @@
 use std::{thread, time};
 
+enum BlockKind{
+    I,O,S,Z,J,L,T,
+}
 
 struct Position {
     x: usize,

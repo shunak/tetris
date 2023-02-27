@@ -4,6 +4,12 @@ enum BlockKind{
     I,O,S,Z,J,L,T,
 }
 
+type BlockShape = [[usize; 4]; 4];
+
+const BLOCKS: [BlockShape; 7] = [
+
+]
+
 struct Position {
     x: usize,
     y: usize,

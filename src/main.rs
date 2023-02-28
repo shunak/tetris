@@ -58,7 +58,7 @@ const BLOCKS: [BlockShape; 7] = [
             [0,0,0,0],
         ],
 
-]
+];
 
 struct Position {
     x: usize,
@@ -141,7 +141,7 @@ fn main() {
             }
             println!();
         }
-    println!();
+    // println!();
 
 
     // Sleep for 1 sec

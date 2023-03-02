@@ -141,7 +141,6 @@ fn main() {
             }
             println!();
         }
-    // println!();
 
 
     // Sleep for 1 sec

@@ -1,5 +1,10 @@
 use std::{thread, time};
 
+const FIELD_WIDTH: usize = 11+2;
+const FIELD_HEIGHT: usize = 20+1;
+type Field = [[usize; FIELD_WIDTH]; FIELD_HEIGHT];
+
+
 enum BlockKind{
     I,O,S,Z,J,L,T,
 }

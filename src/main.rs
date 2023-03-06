@@ -5,6 +5,8 @@ const FIELD_HEIGHT: usize = 20+1; // num of field + num of bottom
 type Field = [[usize; FIELD_WIDTH]; FIELD_HEIGHT];
 
 
+// kind of blocks
+#[derive(Clone, Copy)]
 enum BlockKind{
     I,O,S,Z,J,L,T,
 }

@@ -2,7 +2,7 @@ use std::{thread, time};
 
 const FIELD_WIDTH: usize = 11+2; // num of field + num of walls
 const FIELD_HEIGHT: usize = 20+1; // num of field + num of bottom
-type Field = [[usize; FIELD_WIDTH]; FIELD_HEIGHT];
+type Field = [[usize; FIELD_WIDTH]; FIELD_HEIGHT]; //[V;N] V: Value, N: size of array
 
 
 // kind of blocks

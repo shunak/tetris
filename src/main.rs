@@ -72,6 +72,7 @@ struct Position {
     y: usize,
 }
 
+// collision checker
 
 fn main() {
 

@@ -73,6 +73,11 @@ struct Position {
 }
 
 // collision checker
+fn is_collosion{
+
+
+
+}
 
 fn main() {
 

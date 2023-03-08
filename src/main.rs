@@ -126,10 +126,13 @@ fn main() {
     // }
     let mut pos = Position {x:4, y:0};
 
+
+    // Clear screen
      println!("\x1b[2J\x1b[H\x1b[?25l");
 
 
-    for _ in 0..5 {
+    // for _ in 0..5 {
+    for _ in 0..30 { // fall 30 part of blocks
 
         // Generate Field for draw.
         let mut field_buf = field;

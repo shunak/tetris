@@ -73,10 +73,15 @@ struct Position {
 }
 
 // collision checker
-fn is_collosion{
-
-
-
+fn is_collosion(field: &Field, pos: &Position, block: BlockKind) -> bool {
+    for y in 0..4{
+        for x in 0..4 {
+            if field[y+pos.y+1][x+pos.x] & BLOCKS[block as usize][y][x] == 1 {
+                return true;
+            }
+        }
+    }
+    false
 }
 
 fn main() {

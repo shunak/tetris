@@ -137,6 +137,13 @@ fn main() {
         // Generate Field for draw.
         let mut field_buf = field;
 
+        // Judge collision
+        if !is_collosion(^field, &pos, BlockKind::I){
+            // upate pos y
+            pos.y += 1;
+        }
+
+
         // Write info of tetri mino to Field
         for y in 0..4 {
             for x in 0..4{

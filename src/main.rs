@@ -1,4 +1,5 @@
 use std::{thread, time};
+use getch_rs::{Getch, Key};
 
 const FIELD_WIDTH: usize = 11+2; // num of field + num of walls
 const FIELD_HEIGHT: usize = 20+1; // num of field + num of bottom
@@ -110,28 +111,14 @@ fn main() {
         [1,1,1,1,1,1,1,1,1,1,1,1,1],
     ];
 
-    // let mut field_buf = field;
-
-    // for y in 0..4 {
-    //     for x in 0..4 {
-    //          field_buf[y+ 2][x+2] |= minos[0][y][x];  // I
-    //          field_buf[y+ 2][x+7] |= minos[1][y][x];  // O
-    //          field_buf[y+ 6][x+2] |= minos[2][y][x];  // S
-    //          field_buf[y+ 6][x+7] |= minos[3][y][x];  // Z
-    //          field_buf[y+10][x+2] |= minos[4][y][x];  // J
-    //          field_buf[y+10][x+7] |= minos[5][y][x];  // L
-    //          field_buf[y+14][x+2] |= minos[6][y][x];  // T
-    //     }
-    // }
     let mut pos = Position {x:4, y:0};
-
+    let g = Getch::new();
 
     // Clear screen
      println!("\x1b[2J\x1b[H\x1b[?25l");
 
 
-    // for _ in 0..5 {
-    for _ in 0..30 { // fall 30 part of blocks
+     loop{
 
         // Generate Field for draw.
         let mut field_buf = field;
@@ -146,12 +133,13 @@ fn main() {
         // Write info of tetri mino to Field
         for y in 0..4 {
             for x in 0..4{
-                if BLOCKS[BlockKind::I as usize][y][x] == 1 {
+                if BLOCKS[BlockKind::J as usize][y][x] == 1 {
                     field_buf[y+pos.y][x+pos.x] = 1;
                 }
             }
         }
 
+// Move cursor to Top
  println!("\x1b[H");
 
         // Field for draw
@@ -170,10 +158,15 @@ fn main() {
     // Sleep for 1 sec
     thread::sleep(time::Duration::from_millis(1000));
 
+    // Break out loop by key 'q'
+        match g.getch(){
+            Ok(Key::Char('q')) => break,
+            _ => (), // do nothing
+        }
+
     }
 
-
-
+    // Re-display cursor
      println!("\x1b[?25h");
 
 

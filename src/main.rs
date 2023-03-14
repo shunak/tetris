@@ -122,10 +122,16 @@ fn main() {
         // Generate Field for draw.
         let mut field_buf = field;
 
+        // Natural Falling Dowm
+        let new_pos = Position {
+            x: pos.x,
+            y: pos.y+1,
+        };
+
         // Judge collision
-        if !is_collision(&field, &pos, BlockKind::I){
-            // upate pos y
-            pos.y += 1;
+        if !is_collision(&field, &new_pos, BlockKind::I){
+            // upate pos position
+            pos = new_pos;
         }
 
 
